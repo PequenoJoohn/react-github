@@ -6,4 +6,4 @@ function App() {
     return <Routes />
 }
 
-export default App
+export default App;
