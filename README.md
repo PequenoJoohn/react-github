@@ -6,11 +6,11 @@ This project was done in order to learn more about how the react components and 
 
 ## Packets use
 
-**react-router-dom**
-**styled-components**
-**react-icons**
-**axios**
-**prop-types**
+- **react-router-dom**
+- **styled-components**
+- **react-icons**
+- **axios**
+- **prop-types**
 
 ## Who use
 ```$ git clone https://github.com/PequenoJoohn/react-github.git```
