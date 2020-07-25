@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 import Container from '../../components/Container';
-import { Title, Form, SubmitButton, List } from './styles';
+import { Title, Form, SubmitButton, List, ButtonContainer } from './styles';
 
 class Main extends Component {
     state = {
@@ -57,6 +57,11 @@ class Main extends Component {
         })
     };
 
+    handleDelete = (repository) => {
+        console.log(repository)
+        this.setState({ repositories: this.state.repositories.filter(r => r !== repository) })
+    }
+
 
     render() {
         const { newRepo, repositories, loading } = this.state;
@@ -77,16 +82,19 @@ class Main extends Component {
                             {loading ? (<FaSpinner color="#FFF" size={14} />) : (<FaPlus color="#FFF" size={14} />)}
                         </SubmitButton>
                     </Form>
-                <List>
-                    {repositories.map(repository => (
-                        <li key={repository.name}>
-                            <span>{repository.name}</span>
-                            <Link to={`/repository/${encodeURIComponent(repository.name)}`}>Detalhes</Link>
-                        </li>
-                    ))}
-                </List>
+                    <List>
+                        {repositories.map(repository => (
+                            <li key={repository.name}>
+                                <span>{repository.name}</span>
+                                <ButtonContainer>
+                                    <button onClick={() => this.handleDelete(repository)}>Delete</button>
+                                    <Link to={`/repository/${encodeURIComponent(repository.name)}`}>Detalhes</Link>
+                                </ButtonContainer>
+                            </li>
+                        ))}
+                    </List>
 
-            </Container>
+                </Container>
             </>
         )
     }

@@ -66,6 +66,7 @@ export const List = styled.ul`
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-content: flex-end;
         align-items: center;
 
         & + li {
@@ -76,5 +77,20 @@ export const List = styled.ul`
             color: #e56b6f;
             text-decoration: none;
         }
+    }
+`;
+
+export const ButtonContainer = styled.div`
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        margin-right: 5px;
+        display:flex;
+        color: #fff;
+        background: #e56b6f;
+        padding: 5px;
+        border: 0;
     }
 `;
