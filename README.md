@@ -13,16 +13,15 @@ This project was done in order to learn more about how the react components and 
 - **prop-types**
 
 ## Who use
-```$ git clone https://github.com/PequenoJoohn/react-github.git```
-```$ cd react-github```
+```
+$ git clone https://github.com/PequenoJoohn/react-github.git
+$ cd react-github
+$ yarn
+```
 
 ## Available Scripts
 
 In the project directory, you can run:
-
-### `yarn`
-
-To install the dependencies for project.
 
 ### `yarn start`
 
