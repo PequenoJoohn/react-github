@@ -1,5 +1,12 @@
 import styled, { keyframes, css } from 'styled-components';
 
+export const Title = styled.h1`
+    margin-top: 25px;
+    text-align:center;
+    font-size:36px;
+    color: #eee;
+`;
+
 export const Form = styled.form`
     margin-top: 30px;
     display:flex;

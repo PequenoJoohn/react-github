@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 import Container from '../../components/Container';
-import { Form, SubmitButton, List } from './styles';
+import { Title, Form, SubmitButton, List } from './styles';
 
 class Main extends Component {
     state = {
@@ -44,7 +44,7 @@ class Main extends Component {
 
         const response = await api.get(`/repos/${newRepo}`)
 
-        console.log(response.data);
+        console.log(response);
 
         const data = {
             name: response.data.full_name
@@ -62,19 +62,21 @@ class Main extends Component {
         const { newRepo, repositories, loading } = this.state;
 
         return (
-            <Container>
-                <h1>
-                    <FaGithubAlt />
+            <>
+                <Title>REACT GITHUB API</Title>
+                <Container>
+                    <h1>
+                        <FaGithubAlt />
                     Repositórios
             </h1>
 
-                <Form onSubmit={this.handleSubmit} loading={loading}>
-                    <input type="text" placeholder="Adicionar repositório" value={newRepo} onChange={this.handleInputChange} />
+                    <Form onSubmit={this.handleSubmit} loading={loading}>
+                        <input type="text" placeholder="Adicionar repositório 'repo/project' " value={newRepo} onChange={this.handleInputChange} />
 
-                    <SubmitButton loading={loading} >
-                        {loading ? (<FaSpinner color="#FFF" size={14} />) : (<FaPlus color="#FFF" size={14} />)}
-                    </SubmitButton>
-                </Form>
+                        <SubmitButton loading={loading} >
+                            {loading ? (<FaSpinner color="#FFF" size={14} />) : (<FaPlus color="#FFF" size={14} />)}
+                        </SubmitButton>
+                    </Form>
                 <List>
                     {repositories.map(repository => (
                         <li key={repository.name}>
@@ -85,6 +87,7 @@ class Main extends Component {
                 </List>
 
             </Container>
+            </>
         )
     }
 }
